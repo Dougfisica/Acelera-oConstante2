@@ -11,7 +11,7 @@
       padding: 20px;
     }
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: 0 auto;
       background-color: #fff;
       padding: 20px;
@@ -39,7 +39,7 @@
       margin-top: 10px;
       cursor: pointer;
     }
-    #simulation {
+    #simulation, #graphs {
       margin-top: 20px;
       text-align: center;
     }
@@ -52,6 +52,15 @@
     }
     #currentValues p {
       margin: 5px 0;
+    }
+    .flex-container {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .flex-item {
+      flex: 1;
+      min-width: 300px;
     }
   </style>
 </head>
@@ -77,8 +86,13 @@
     <button id="resetButton">Resetar</button>
   </div>
   
-  <div id="simulation">
-    <!-- O canvas do p5.js será inserido aqui -->
+  <div class="flex-container">
+    <div id="simulation" class="flex-item">
+      <!-- O canvas da simulação será inserido aqui -->
+    </div>
+    <div id="graphs" class="flex-item">
+      <!-- Os gráficos serão inseridos aqui -->
+    </div>
   </div>
   
   <div id="currentValues">
@@ -93,6 +107,9 @@
 
 <!-- Inclua a biblioteca p5.js -->
 <script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+<!-- Inclua a biblioteca p5.js para gráficos -->
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/addons/p5.dom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/addons/p5.chart.min.js"></script>
 <script src="script.js"></script>
 
 </body>
