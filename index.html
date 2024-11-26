@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador de Movimento Uniformemente Variado</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    h1 {
+      text-align: center;
+    }
+    #controls {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    input[type="range"] {
+      width: 100%;
+    }
+    #startButton, #resetButton {
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    #simulation {
+      margin-top: 20px;
+      text-align: center;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+    #currentValues {
+      margin-top: 20px;
+    }
+    #currentValues p {
+      margin: 5px 0;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h1>Simulador de Movimento Uniformemente Variado</h1>
+  
+  <div id="controls">
+    <label>
+      Posição Inicial (X₀): <span id="x0Value">0 m</span>
+      <input type="range" id="x0" min="0" max="100" value="0">
+    </label>
+    <label>
+      Velocidade Inicial (V₀): <span id="v0Value">10 m/s</span>
+      <input type="range" id="v0" min="0" max="50" value="10">
+    </label>
+    <label>
+      Aceleração (a): <span id="aValue">0 m/s²</span>
+      <input type="range" id="a" min="-10" max="10" step="0.1" value="0">
+    </label>
+    <button id="startButton">Iniciar</button>
+    <button id="resetButton">Resetar</button>
+  </div>
+  
+  <div id="simulation">
+    <!-- O canvas do p5.js será inserido aqui -->
+  </div>
+  
+  <div id="currentValues">
+    <p><strong>Equação do Movimento:</strong></p>
+    <p id="motionEquation">X = 0 + 10t + ½(0)t²</p>
+    <p><strong>Valores Atuais:</strong></p>
+    <p id="currentTime">Tempo: 0.00 s</p>
+    <p id="currentPosition">Posição: 0.00 m</p>
+    <p id="currentVelocity">Velocidade: 10.00 m/s</p>
+  </div>
+</div>
+
+<!-- Inclua a biblioteca p5.js -->
+<script src="https://cdn.jsdelivr.net/npm/p5@1.6.0/lib/p5.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
